@@ -19,7 +19,7 @@
       <button class="text-xl inline-block rounded bg-indigo-500 mx-1 w-8" @click="octave += 1">++</button>
     </label>
     <div class="mt-3 text-green-400 text-4xl text-bold">
-      <span>{{frequency}}Hz</span> |   <span>{{time}}ms</span> | {{length}}m
+      <span>{{frequency}}Hz</span> |   <span>{{time}}ms</span> | <span>{{length}}m</span> | <span>{{bpm1}}bpm</span>
     </div>
   </div>
 </template>
@@ -51,11 +51,14 @@ export default {
     },
     length() { // speed of sound in air = 344 m/s
       return this.round(344 / this.frequency, 4)
-    }
+    },
+    bpm1(dur) {
+      return this.round(this.frequency * 3600/512, 3);
+    },
   },
   methods: {
     round: (n, precision) =>
-        Math.round((Number.EPSILON + n) * Math.pow(10, precision)) / Math.pow(10, precision)
+        Math.round((Number.EPSILON + n) * Math.pow(10, precision||0)) / Math.pow(10, precision||0)
   }
 
 }
