@@ -1,11 +1,10 @@
 <template>
-  <h1>{{ msg }}</h1>
-  <label>Concert Pitch
-    <button @click="pitch -= 1">--</button>
-    <button @click="pitch -= 0.1">-</button>
-    <input type="text" :value="pitch">
-    <button @click="pitch += 0.1">+</button>
-    <button @click="pitch += 1">++</button>
+  <label class="text-xl">Concert Pitch
+    <button class="text-xl" @click="pitch -= 1">--</button>
+    <button class="text-xl" @click="pitch -= 0.1">-</button>
+    <input class="text-xl" type="text" :value="pitch">
+    <button class="text-xl" @click="pitch += 0.1">+</button>
+    <button class="text-xl" @click="pitch += 1">++</button>
   </label>
   <br>
   <label for="note">
