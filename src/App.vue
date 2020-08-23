@@ -1,6 +1,6 @@
-<template>
-  <h1>Music Producer Calculator</h1>
-  <h2>Pitch - Frequency - Period - Wavelength</h2>
+<template class="border rounded">
+  <h1 class="text-4xl text-gray-300">Music Producer Calculator</h1>
+  <h2 class="text-2xl text-gray-400">Pitch - Frequency - Period - Wavelength</h2>
   <Calculator/>
 </template>
 
