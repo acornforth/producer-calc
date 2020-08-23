@@ -1,23 +1,22 @@
 <template>
   <div class="mt-4 p-4 rounded-lg text-gray-200 bg-indigo-900">
-    <label class="text-xl">Concert Pitch
-      <button class="text-xl" @click="pitch -= 1">--</button>
-      <button class="text-xl" @click="pitch -= 0.1">-</button>
-      <input class="text-xl bg-indigo-800" type="text" :value="pitch">
-      <button class="text-xl" @click="pitch += 0.1">+</button>
-      <button class="text-xl" @click="pitch += 1">++</button>
+    <label class="text-xl my-1 block">Concert Pitch<br>
+      <button class="text-xl inline-block rounded bg-indigo-500 mx-1 w-8" @click="pitch -= 1">--</button>
+      <button class="text-xl inline-block rounded bg-indigo-500 mx-1 w-8" @click="pitch -= 0.1">-</button>
+      <input class="text-xl bg-indigo-800 rounded-lg w-16 shadow-inner py-2 text-center" type="text" v-model="pitch">
+      <button class="text-xl inline-block rounded bg-indigo-500 mx-1 w-8" @click="pitch += 0.1">+</button>
+      <button class="text-xl inline-block rounded bg-indigo-500 mx-1 w-8" @click="pitch += 1">++</button>
     </label>
-    <br>
-    <label class="text-xl" for="note">
-      Note
-      <select  class="bg-indigo-800 text-xl"  name="note" id="note" v-model="note">
+    <label class="text-xl block my-1" for="note">
+      Note<br>
+      <select  class="bg-indigo-800 text-xl rounded-lg w-16 shadow-inner p-2 text-center"  name="note" id="note" v-model="note">
         <option v-for="(note, number) in notes" class="bg-indigo-800" :value="number">{{note}}</option>
       </select>
     </label>
-    <label class="text-xl">Octave
-      <button class="text-xl" @click="octave -= 1">--</button>
-      <input class="text-xl bg-indigo-800 " type="text" :value="octave">
-      <button class="text-xl" @click="octave += 1">++</button>
+    <label class="text-xl block my-1">Octave<br>
+      <button class="text-xl inline-block rounded bg-indigo-500 mx-1 w-8" @click="octave -= 1">--</button>
+      <input class="text-xl bg-indigo-800 rounded-lg w-16 shadow-inner py-2 text-center" type="text" v-model:value="octave">
+      <button class="text-xl inline-block rounded bg-indigo-500 mx-1 w-8" @click="octave += 1">++</button>
     </label>
     <div class="mt-3 text-green-400 text-4xl text-bold">
       <span>{{frequency}}Hz</span> |   <span>{{time}}ms</span> | {{length}}m
