@@ -31,7 +31,7 @@
     <button @click="octave += 1">++</button>
   </label>
   <br>
-  <span>{{frequency}}Hz</span> |   <span>{{time}}ms</span>
+  <span>{{frequency}}Hz</span> |   <span>{{time}}ms</span> | {{length}}m
 </template>
 
 
@@ -55,8 +55,11 @@ export default {
           4
       )
     },
-    time() {
+    time() { // in ms
       return this.round(1000/this.frequency, 4)
+    },
+    length() { // speed of sound in air = 344 m/s
+      return this.round(344 / this.frequency, 4)
     }
   },
   methods: {
