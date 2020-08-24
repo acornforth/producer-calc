@@ -1,11 +1,11 @@
 <template>
   <div class="mt-4 p-4 rounded-lg text-gray-200 bg-indigo-900">
     <label class="text-xl my-1 block">Concert Pitch<br>
-      <button class="text-xl inline-block rounded bg-indigo-500 mx-1 w-8" @click="pitch -= 1">--</button>
-      <button class="text-xl inline-block rounded bg-indigo-500 mx-1 w-8" @click="pitch -= 0.1">-</button>
+      <button @click="pitch -= 1">--</button>
+      <button @click="pitch -= 0.1">-</button>
       <input class="text-xl bg-indigo-800 rounded-lg w-16 shadow-inner py-2 text-center" type="text" v-model="pitch">
-      <button class="text-xl inline-block rounded bg-indigo-500 mx-1 w-8" @click="pitch += 0.1">+</button>
-      <button class="text-xl inline-block rounded bg-indigo-500 mx-1 w-8" @click="pitch += 1">++</button>
+      <button @click="pitch += 0.1">+</button>
+      <button @click="pitch += 1">++</button>
     </label>
     <label class="text-xl block my-1" for="note">
       Note<br>
@@ -14,9 +14,9 @@
       </select>
     </label>
     <label class="text-xl block my-1">Octave<br>
-      <button class="text-xl inline-block rounded bg-indigo-500 mx-1 w-8" @click="octave -= 1">--</button>
+      <button @click="octave -= 1">--</button>
       <input class="text-xl bg-indigo-800 rounded-lg w-16 shadow-inner py-2 text-center" type="text" v-model:value="octave">
-      <button class="text-xl inline-block rounded bg-indigo-500 mx-1 w-8" @click="octave += 1">++</button>
+      <button @click="octave += 1">++</button>
     </label>
     <div class="mt-3 text-green-400 text-4xl text-bold">
       <span>{{frequency}}Hz</span> |   <span>{{time}}ms</span> | <span>{{length}}m</span> | <span>{{bpm1}}bpm</span>

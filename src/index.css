@@ -1,5 +1,15 @@
 @tailwind base;
 
+button {
+  @apply text-xl;
+  @apply inline-block;
+  @apply rounded;
+  @apply bg-indigo-500;
+  @apply mx-1;
+  @apply w-8;
+  @apply min-w-0;
+}
+
 @tailwind components;
 
 @tailwind utilities;
