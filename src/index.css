@@ -6,7 +6,7 @@ button {
   @apply rounded;
   @apply bg-indigo-500;
   @apply mx-1;
-  @apply w-8;
+  @apply w-12;
   @apply min-w-0;
 }
 

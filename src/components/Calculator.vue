@@ -15,19 +15,26 @@
     </label>
     <label class="text-xl block my-1">Octave<br>
       <button @click="octave -= 1">--</button>
-      <input class="text-xl bg-indigo-800 rounded-lg w-16 shadow-inner py-2 text-center" type="text" v-model:value="octave">
+      <input class="text-xl bg-indigo-800 rounded-lg w-16 shadow-inner py-2 text-center" type="text" v-bind:value="octave">
       <button @click="octave += 1">++</button>
     </label>
-    <div class="mt-3 text-green-400 text-4xl text-bold">
-      <span>{{frequency}}Hz</span> |   <span>{{time}}ms</span> | <span>{{length}}m</span> | <span>{{bpm1}}bpm</span>
+    <div class="mt-3 lg:flex justify-between">
+      <Value class="flex-1" :value="frequency" :unit="'Hz'"/>
+      <Value class="flex-1" :value="time" :unit="'ms'"/>
+      <Value class="flex-1" :value="length" :unit="'m'"/>
+      <Value class="flex-1" :value="bpm1" :unit="'bpm'"/>
     </div>
   </div>
 </template>
 
 
 <script lang='ts'>
+import Value from './Value.vue'
 export default {
   name: 'Calculator',
+  components: {
+    Value
+  },
   props: {
   },
   data() {
@@ -36,7 +43,7 @@ export default {
       pitch: 440.0,
       octave: 0,
       note: 7,
-      notes: {1: 'A', 2:'A#', 3: 'B', 4: 'C', 5: 'C#', 6: 'D', 7: 'D#', 8:'E', 9: 'F', 10: 'F#', 11: 'G', 12: 'G#'}
+      notes: {1: 'A', 2:'A♯/B♭', 3: 'B', 4: 'C', 5: 'C♯/D♭', 6: 'D', 7: 'D♯/E♭', 8:'E', 9: 'F', 10: 'F♯/G♭', 11: 'G', 12: 'G♯/A♭'}
     }
   },
   computed: {
