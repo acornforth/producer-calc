@@ -16,7 +16,7 @@
     "vite": "^2.1.5",
     "vue-tsc": "^0.0.15",
     "autoprefixer": "^9.8.6",
-    "postcss": "^8.2.9",
+    "postcss": "^8.2.10",
     "tailwindcss": "^1.9.6"
   }
 }
